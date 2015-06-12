@@ -1,9 +1,17 @@
+#include <CapacitiveSensor.h>
+
+CapacitiveSensor   cs_6_4 = CapacitiveSensor(6,4);
+
+// 10 MegOhm resistor between 6 and 4, 4 is the sensor.
+
 void setup() 
 {
+  //Set pin assignments
   pinMode(2, OUTPUT);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(4, INPUT);
+  Serial.begin(9600);
 }
 
 void loop() 
