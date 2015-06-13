@@ -1,7 +1,14 @@
 #include <CapacitiveSensor.h>
 
-CapacitiveSensor   cs_6_4 = CapacitiveSensor(6,4);
+long time = 0;
+int state = HIGH;
 
+boolean yes;
+boolean previous = false;
+
+int debounce = 200;
+
+CapacitiveSensor   cs_6_4 = CapacitiveSensor(6,4);
 // 10 MegOhm resistor between 6 and 4, 4 is the sensor.
 
 void setup() 
@@ -16,6 +23,22 @@ void setup()
 
 void loop() 
 {
+  long totall =  cs_6_4.capacitiveSensor(30);
+  
+  if (totall > 60){yes = true;}
+  else {yes = false;}
+  
+  if(yes == true && previous == false &&millis() - time>debounce){
+    
+    if(state == LOW){
+      state = HIGH;
+    }
+    else
+      state = LOW;
+      time = millis();
+      
+  }
+  
   //Ring the Bell!
   
   digitalWrite(2, HIGH);
