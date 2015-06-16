@@ -28,16 +28,9 @@ void loop()
   if (totall > 60){yes = true;}
   else {yes = false;}
   
-  if(yes == true && previous == false &&millis() - time>debounce){
-    
-    if(state == LOW){
-      state = HIGH;
-    }
-    else
-      state = LOW;
-      time = millis();
-      
-  }
+  if(yes == true && previous == false &&millis() - time>debounce)
+  
+  {
   
   //Ring the Bell!
   
@@ -79,4 +72,5 @@ void loop()
   delay(300);
   digitalWrite(2, LOW);
   delay(500);  
+}
 }
