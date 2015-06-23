@@ -1,5 +1,7 @@
 # Train-Controller-Touch-Control
 
+Pre-Release Version 0.1
+
 A recreation of the first Arduino-based project I ever did. The original code was lost in a hard drive failure. It's made to operate a wireless controller for a G scale model train using a capacitive touchplate.
 
 Very simple, very repetitive but it does the job.
